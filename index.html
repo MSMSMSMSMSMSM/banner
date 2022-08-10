@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeaSha Banner</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <main class="container">
+        <div class="profile">
+            <figure>
+                <img src="data:image/png;base64,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" alt="프로필 이미지">
+            </figure>
+            <div class="profile__info">
+            <h2>Discord Banner</h2>
+            <p>Develop by 미샤#0002</p>
+        </div>
+        </div>
+        <ul class="link">
+            <li ><a href="https://discord.com/invite/pencil">Pencil Community<img src="./assets/cheveron-right.png" alt="유튜브 바로가기"></a></li>
+            <li ><a onclick="alert1();">펜타곤<img src="./assets/cheveron-right.png"></a></li>
+            <!--<li ><a href="https://discord.com/app">배너 문의 미 샤#0002<img src="./assets/cheveron-right.png" alt="인스타그램 바로가기"></a></li>-->
+        </ul>
+        <footer>
+            <a class="btn" id="share" href="" onclick="copyToClipboard();"><img src="./assets/share.png" alt="공유하기">공유하기</a>
+            <a class="btn btn-black" id="copybtn2" href="https://discord.com/app"><img src="./assets/mail-open.png" alt="업무제안">문의하기</a>
+        </footer>
+    </main>
+    <script>
+        function copyToClipboard(val) {
+            var t = document.createElement("textarea");
+            document.body.appendChild(t);
+            t.value = window.location.href;
+            t.select();
+            document.execCommand('copy');
+            document.body.removeChild(t);
+            alert('주소를 복사하였습니다.')
+        }
+        function copyToClipboard1(val) {
+            var t = document.createElement("textarea");
+            document.body.appendChild(t);
+            t.value = "คʕ•ﻌ•ʔค#0001";
+            t.select();
+            document.execCommand('copy');
+            document.body.removeChild(t);
+            alert("디스코드 " + `${t.value}` + "가 복사 되었습니다")
+        }
+        function alert1(){
+            var a = "http://pen-kor.com/";
+            swal('펜타곤',`🦉🦉 펜타곤(Pentagon) 🦉🦉
+
+
+            [🦉] 심플한 사이트 구조 O
+
+            [🧡] 3+1 / 5+2 / 10+4 / 20+7 / 30+10 / 50+15 / 100+30
+            [🧡] 가입첫충 30%
+            [🧡] 매일첫충 15%
+            [🧡] 매충 5%
+
+            [🧡] 스포츠/미니게임/카지노/슬롯
+            [🧡] 미니게임 8가지 
+            [🧡] 이벤트 8가지 (연승연패,신규입플,신규첫충,출석 등)
+            [🧡] 최소배팅 1,000원
+            [🧡] 배팅관련제재 (마틴 OK, 루틴 X , 시스템 X , 보험배팅 X)
+
+            ✅ 카뱅미니 토스뱅크 가능 ✅
+
+            ✅ 1:1 가상계좌 입금 방식 OK ✅
+
+            ✅ 미자도 OK ✅
+
+            ✅ 블랙 승인 OK ✅
+
+            ❌ 승인 전화 없습니다 ❌
+
+            ⛵️ 사이트 주소 : http://pen-kor.com/
+            가입코드 : 2222 `,'info');
+        }
+      </script>
+</body>
+</html>
