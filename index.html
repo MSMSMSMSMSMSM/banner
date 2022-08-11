@@ -7,6 +7,8 @@
     <title>MeaSha Banner</title>
     <link rel="stylesheet" href="./style.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
 </head>
 <body>
     <main class="container">
@@ -20,13 +22,13 @@
         </div>
         </div>
         <ul class="link">
-            <li ><a href="https://discord.com/invite/pencil">Pencil Community<img src="./assets/cheveron-right.png" alt="유튜브 바로가기"></a></li>
+            <li ><a onclick="a11();">Pencil Community<img src="./assets/cheveron-right.png"></a></li>
             <li ><a onclick="alert1();">펜타곤<img src="./assets/cheveron-right.png"></a></li>
-            <!--<li ><a href="https://discord.com/app">배너 문의 미 샤#0002<img src="./assets/cheveron-right.png" alt="인스타그램 바로가기"></a></li>-->
+            <!--<li ><a href="https://discord.com/app">배너 문의 미 샤#0002<img src="./assets/cheveron-right.png"></a></li>-->
         </ul>
         <footer>
-            <a class="btn" id="share" href="" onclick="copyToClipboard();"><img src="./assets/share.png" alt="공유하기">공유하기</a>
-            <a class="btn btn-black" id="copybtn2" href="https://discord.com/app"><img src="./assets/mail-open.png" alt="업무제안">문의하기</a>
+            <a class="btn" id="share" href="" onclick="copyToClipboard();"><img src="./assets/share.png">공유하기</a>
+            <a class="btn btn-black" id="copybtn2" onclick="al();"><img src="./assets/mail-open.png">후원하기</a>
         </footer>
     </main>
     <script>
@@ -49,35 +51,47 @@
             alert("디스코드 " + `${t.value}` + "가 복사 되었습니다")
         }
         function alert1(){
+            const aa = "[🦉] 심플한 사이트 구조 O<br/>[🧡] 3+1 / 5+2 / 10+4 / 20+7 / 30+10 / 50+15 / 100+30<br/>[🧡] 가입첫충 30%<br/>[🧡] 매일첫충 15%<br/>[🧡] 매충 5%<br/><br/>[🧡] 스포츠/미니게임/카지노/슬롯<br/>[🧡] 미니게임 8가지 <br/>[🧡] 이벤트 8가지 (연승연패,신규입플,신규첫충,출석 등)<br/>[🧡] 최소배팅 1,000원<br/>[🧡] 배팅관련제재 (마틴 OK, 루틴 X , 시스템 X , 보험배팅 X)<br/><br/>✅ 카뱅미니 토스뱅크 가능 ✅<br/><br/>✅ 1:1 가상계좌 입금 방식 OK ✅<br/><br/>✅ 미자도 OK ✅<br/><br/>✅ 블랙 승인 OK ✅<br/><br/>❌ 승인 전화 없습니다 ❌<br/><br/>⛵️ 사이트 주소 : http://pen-kor.com<br/>가입코드 : 2222 "
             var a = "http://pen-kor.com/";
-            swal('펜타곤',`🦉🦉 펜타곤(Pentagon) 🦉🦉
-
-
-            [🦉] 심플한 사이트 구조 O
-
-            [🧡] 3+1 / 5+2 / 10+4 / 20+7 / 30+10 / 50+15 / 100+30
-            [🧡] 가입첫충 30%
-            [🧡] 매일첫충 15%
-            [🧡] 매충 5%
-
-            [🧡] 스포츠/미니게임/카지노/슬롯
-            [🧡] 미니게임 8가지 
-            [🧡] 이벤트 8가지 (연승연패,신규입플,신규첫충,출석 등)
-            [🧡] 최소배팅 1,000원
-            [🧡] 배팅관련제재 (마틴 OK, 루틴 X , 시스템 X , 보험배팅 X)
-
-            ✅ 카뱅미니 토스뱅크 가능 ✅
-
-            ✅ 1:1 가상계좌 입금 방식 OK ✅
-
-            ✅ 미자도 OK ✅
-
-            ✅ 블랙 승인 OK ✅
-
-            ❌ 승인 전화 없습니다 ❌
-
-            ⛵️ 사이트 주소 : http://pen-kor.com/
-            가입코드 : 2222 `,'info');
+            Swal.fire({
+                title:'펜타곤',
+                html:aa,
+                icon:'info',
+                confirmButtonText: '바로가기',
+                cancelButtonText: '취소',
+                confirmButtonColor: '#3085d6',
+                showCancelButton: true,
+                cancelButtonColor: '#d33'
+            }).then((result)=> {
+                if (result.isConfirmed){
+                    window.location.href = "http://pen-kor.com"
+                }
+            })
+        }
+        function al(){
+            Swal.fire({
+                title:"토스뱅크",
+                text:"1908-5025-5407 ㄱㄱㅌ",
+                icon:"info",
+                confirmButtonText : '확인'
+            });
+        }
+        function a11(){
+            Swal.fire({
+                title: '연필 커뮤니티',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                cancelButtonText: '취소',
+                imageUrl: "https://cdn.discordapp.com/attachments/1006156371286294539/1007227872605380648/output-onlinegiftools.gif",
+                confirmButtonText: '가입하기',
+                imageWidth: 160,
+                imageHeight: 160
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href='https://discord.gg/pencil';
+                }
+            })
         }
       </script>
 </body>
